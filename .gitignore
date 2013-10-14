@@ -1,3 +1,6 @@
+
+##### NodeJS
+
 lib-cov
 *.seed
 *.log
@@ -13,3 +16,11 @@ results
 
 npm-debug.log
 node_modules
+
+
+
+##### IntelliJ IDEA
+
+.idea/
+*.iml
+target/
