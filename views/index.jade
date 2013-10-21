@@ -1,4 +1,25 @@
 extends layout
 
 block content
-    h1 Let's get SERIOUS
+    h1 Let's bring some Pokémon into the world
+    div(ng-controller='PokeCtrl')
+        table.table.table-striped
+            thead
+                tr
+                    th
+                    th Name
+                    th Nickname
+                    th Level
+            tbody
+                tr(ng-repeat='pokemon in pokemonList')
+                    td
+                        img(src='http://www.serebii.net/pokedex-rs/icon/{{pokemon.number}}.gif')
+                    td {{pokemon.name}}
+                    td {{pokemon.nickname}}
+                    td {{pokemon.level}}        
+    
+    p.disclaimer
+        | All images borrowed with no permission whatsoever from 
+        a(href='http://www.serebii.net/') Serebii.net
+
+    script(src='/js/controllers/PokeCtrl.js')
