@@ -17,6 +17,19 @@ block content
                     td {{pokemon.name}}
                     td {{pokemon.nickname}}
                     td {{pokemon.level}}        
+                        
+        h3 Add a Pokémon
+        form.form-inline(ng-submit='addPokemon()', role='form')    
+            .form-group    
+                input.form-control(type='text', placeholder='Number', ng-model='new.number')
+            .form-group
+                input.form-control(type='text', placeholder='Name', ng-model='new.name')
+            .form-group    
+                input.form-control(type='text', placeholder='Nickname', ng-model='new.nickname')
+            .form-group
+                input.form-control(type='text', placeholder='Level', ng-model='new.level')
+            .form-group
+                button.btn.btn-default(type='submit') Add
     
     p.disclaimer
         | All images borrowed with no permission whatsoever from 
