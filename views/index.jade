@@ -10,26 +10,33 @@ block content
                     th Name
                     th Nickname
                     th Level
+                    th
             tbody
                 tr(ng-repeat='pokemon in pokemonList')
                     td
-                        img(src='http://www.serebii.net/pokedex-rs/icon/{{pokemon.number}}.gif')
+                        img(src='http://www.serebii.net/pokedex-xy/icon/{{pokemon.number}}.png')
                     td {{pokemon.name}}
                     td {{pokemon.nickname}}
-                    td {{pokemon.level}}        
-                        
-        h3 Add a Pokémon
-        form.form-inline(ng-submit='addPokemon()', role='form')    
-            .form-group    
-                input.form-control(type='text', placeholder='Number', ng-model='new.number')
-            .form-group
-                input.form-control(type='text', placeholder='Name', ng-model='new.name')
-            .form-group    
-                input.form-control(type='text', placeholder='Nickname', ng-model='new.nickname')
-            .form-group
-                input.form-control(type='text', placeholder='Level', ng-model='new.level')
-            .form-group
-                button.btn.btn-default(type='submit') Add
+                    td {{pokemon.level}}
+                    td
+                        button.btn.btn-danger(ng-click='kill($index)') Kill
+        div
+            h3 Some stats
+            p You have {{pokemonList.length}} Pokémon
+        
+        div
+            h3 Add a Pokémon
+            form.form-inline(ng-submit='addPokemon()', role='form')    
+                .form-group    
+                    input.form-control(type='text', placeholder='Number', ng-model='new.number')
+                .form-group
+                    input.form-control(type='text', placeholder='Name', ng-model='new.name')
+                .form-group    
+                    input.form-control(type='text', placeholder='Nickname', ng-model='new.nickname')
+                .form-group
+                    input.form-control(type='text', placeholder='Level', ng-model='new.level')
+                .form-group
+                    button.btn.btn-default(type='submit') Add
     
     p.disclaimer
         | All images borrowed with no permission whatsoever from 

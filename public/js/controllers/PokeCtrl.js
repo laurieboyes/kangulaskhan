@@ -15,4 +15,8 @@ function PokeCtrl($scope) {
         });
         $scope.new = null;
     };
+
+    $scope.kill = function(index) {
+        $scope.pokemonList.splice(index, 1);
+    };
 }
